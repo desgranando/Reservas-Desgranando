@@ -53,11 +53,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 1.2r
 .session-time{font-size:0.78rem;color:rgba(240,237,230,0.45);margin-bottom:0.8rem;font-family:'DM Mono',monospace;}
 .session-book{font-size:0.76rem;font-style:italic;color:rgba(240,237,230,0.55);margin-bottom:0.8rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(255,255,255,0.07);}
 .attendees-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:rgba(240,237,230,0.3);margin-bottom:0.4rem;}
-.avatars{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0.6rem;min-height:28px;}
-.avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;flex-shrink:0;}
+.avatars{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0.6rem;min-height:24px;}
+.avatar{height:24px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:500;flex-shrink:0;padding:0 8px;white-space:nowrap;}
 .avatar-libro{background:rgba(196,102,74,0.3);color:#E8967E;border:1px solid rgba(196,102,74,0.4);}
 .avatar-cine{background:rgba(83,74,183,0.3);color:#9A94E0;border:1px solid rgba(83,74,183,0.4);}
-.avatar-empty{background:rgba(255,255,255,0.05);border:1px dashed rgba(255,255,255,0.12);}
+.avatar-empty{width:24px;background:rgba(255,255,255,0.05);border:1px dashed rgba(255,255,255,0.12);}
 .session-count{font-size:0.72rem;color:rgba(240,237,230,0.38);}
 .session-count span{color:#F0EDE6;font-weight:500;}
 .btn-reservar-libro{width:100%;margin-top:0.8rem;padding:0.6rem;border-radius:6px;border:none;background:#C4664A;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.76rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
@@ -442,7 +442,7 @@ function renderLibro() {
   const grid = document.getElementById('sessions-libro');
   grid.innerHTML = sessions.map(s => {
     const names = inscritos.libro?.[s.id] || [];
-    const avs = names.map(n => `<div class="avatar avatar-libro" title="${escH(n)}">${escH(initials(n))}</div>`).join('') +
+    const avs = names.map(n => `<div class="avatar avatar-libro" title="${escH(n)}">${escH(n)}</div>`).join('') +
       (names.length === 0 ? `<div class="avatar avatar-empty"></div>` : '');
     const ct = names.length === 0
       ? `Nadie apuntado — <span>¡sé el primero!</span>`
@@ -473,7 +473,7 @@ function renderCine() {
 
   const names = inscritos.cine || [];
   document.getElementById('avatars-cine').innerHTML =
-    names.map(n => `<div class="avatar avatar-cine" title="${escH(n)}">${escH(initials(n))}</div>`).join('') +
+    names.map(n => `<div class="avatar avatar-cine" title="${escH(n)}">${escH(n)}</div>`).join('') +
     (names.length === 0 ? `<div class="avatar avatar-empty"></div>` : '');
   document.getElementById('count-cine').innerHTML = names.length === 0
     ? `Nadie apuntado aún — <span>¡sé el primero!</span>`
