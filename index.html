@@ -149,19 +149,19 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 1.2r
 <nav>
   <div class="nav-logo">Desgranando</div>
   <div class="nav-tabs">
-    <button class="tab-btn libro-active" id="tab-libro" onclick="switchTab('libro')">Club de lectura</button>
-    <button class="tab-btn cine-inactive" id="tab-cine" onclick="switchTab('cine')">Club de cine</button>
+    <button class="tab-btn libro-active" id="tab-libro" onclick="switchTab('libro')" style="display:none">Club de lectura</button>
+    <button class="tab-btn cine-active" id="tab-cine" onclick="switchTab('cine')">Club de cine</button>
     <button class="tab-btn admin-btn" id="tab-admin" onclick="switchTab('admin')">⚙ Admin</button>
   </div>
 </nav>
 
 <!-- LIBRO -->
-<div id="section-libro" class="section active">
+<div id="section-libro" class="section">
   <div class="hero-libro">
     <div class="hero-text">
       <div class="hero-eyebrow eyebrow-libro" id="libro-eyebrow">Club de lectura · Mayo 2025</div>
       <div class="hero-title" id="libro-hero-title">El Edén al Alba</div>
-      <div class="hero-sub">Elige la sesión que mejor te venga y reserva tu plaza. Pago de 8 € por Bizum o en efectivo el día de la sesión.</div>
+      <div class="hero-sub">Elige la sesión que mejor te venga y reserva tu plaza. Pago de 8 € por Bizum tras apuntarte.</div>
     </div>
     <div class="price-badge-libro"><div class="price-num">8€</div><div class="price-label">por sesión</div></div>
   </div>
@@ -178,7 +178,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 1.2r
 </div>
 
 <!-- CINE -->
-<div id="section-cine" class="section">
+<div id="section-cine" class="section active">
   <div class="hero-cine">
     <div class="hero-text">
       <div class="hero-eyebrow eyebrow-cine" id="cine-eyebrow">Club de cine · Mayo 2025</div>
